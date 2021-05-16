@@ -59,7 +59,7 @@ double calculateX_falsePosition(double a, double b) {
 }
 
 double calculateX_fixedPoint(double x){
-    return pow(6 - x, 0.5);
+    return sqrt(6 - x, 0.5); //compilar para vê se dar problema
 }
 
 double calculateX_newtonRaphson(double x){
