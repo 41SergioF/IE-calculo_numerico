@@ -95,7 +95,7 @@ double bisectionMethod(double a, double b, double error) {
                 a = x;      //sendo 'a' NEGATIVO e f(x) NEGATIVO
             }
         }
-        x = calculateX_bisection(a, b);            //suposto valor do x para esse passo
+        x = calculateX_bisection(a, b);            //suposto valor do x para esse step
     }       
     return x; //retorna x sendo f(x) próximo a 0
 }
@@ -165,17 +165,16 @@ double secanteMethod(double x_k, double x_kMenosUm, double error){
 
     return x_kMaisUm;
 }
-
-void createsListOfValues(float inicio, float passo){
-    int i;                      //i para ser usado no for
+//Creação de uma matriz contendo os valores de x e f(x)
+void createsListOfValues(float start, float step){ //A variavel start 
+    int i;                       //i para ser usado no for
     float matrixOfValues[10][2]; //matriz de valores x f(x)
-    printf("   x   |  f(x)\n");
-    for (i = 0; i <= 10; i++){   
-        //printf("x = %.2f f(%.2f) = %.2f\t\t", inicio, inicio, function(inicio));   
-        matrixOfValues[i][0] = inicio; 
-        matrixOfValues[i][1] = function(inicio);  
-        inicio+=passo;  
-
+    printf("   x   |  f(x)\n");  //impreção do cabeçalho
+    for (i = 0; i <= 10; i++){     
+        matrixOfValues[i][0] = start; 
+        matrixOfValues[i][1] = function(start);  
+        start+=step;           //E incrementados o valor usado para o step
+        //Esse trexo de código implementa a melhor forma de amostragem das informações 
         if(matrixOfValues[i][0] >= 0)
             printf(" %.3f |", matrixOfValues[i][0]);
         else
@@ -187,20 +186,3 @@ void createsListOfValues(float inicio, float passo){
             printf(" %.3f\n", matrixOfValues[i][1]);
     }
 }
-
-/*
-if ((matrixOfValues[i][0]*matrixOfValues[i][1]) > 0)
-            printf("  ");
-        else
-            printf("> "); 
-
-        if (inicio >= 0)
-            printf("x =  %.2f f(%.2f)  = ", inicio, inicio);
-        else
-            printf("x = %.2f f(%.2f) = ", inicio, inicio);
-        
-        if (matrixOfValues[i][1] >= 0)
-            printf(" %.2f\n", matrixOfValues[i][1]);
-        else
-            printf("%.2f\n", matrixOfValues[i][1]);
-*/
