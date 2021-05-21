@@ -59,7 +59,7 @@ double calculateX_falsePosition(double a, double b) {
 }
 
 double calculateX_fixedPoint(double x){
-    return sqrt(6 - x, 0.5); //compilar para vê se dar problema
+    return x;// pow(6 - x, 0.5);
 }
 
 double calculateX_newtonRaphson(double x){
@@ -165,3 +165,42 @@ double secanteMethod(double x_k, double x_kMenosUm, double error){
 
     return x_kMaisUm;
 }
+
+void createsListOfValues(float inicio, float passo){
+    int i;                      //i para ser usado no for
+    float matrixOfValues[10][2]; //matriz de valores x f(x)
+    printf("   x   |  f(x)\n");
+    for (i = 0; i <= 10; i++){   
+        //printf("x = %.2f f(%.2f) = %.2f\t\t", inicio, inicio, function(inicio));   
+        matrixOfValues[i][0] = inicio; 
+        matrixOfValues[i][1] = function(inicio);  
+        inicio+=passo;  
+
+        if(matrixOfValues[i][0] >= 0)
+            printf(" %.3f |", matrixOfValues[i][0]);
+        else
+            printf("%.3f |", matrixOfValues[i][0]);
+
+        if(matrixOfValues[i][1] >= 0)
+            printf("  %.3f\n", matrixOfValues[i][1]);
+        else
+            printf(" %.3f\n", matrixOfValues[i][1]);
+    }
+}
+
+/*
+if ((matrixOfValues[i][0]*matrixOfValues[i][1]) > 0)
+            printf("  ");
+        else
+            printf("> "); 
+
+        if (inicio >= 0)
+            printf("x =  %.2f f(%.2f)  = ", inicio, inicio);
+        else
+            printf("x = %.2f f(%.2f) = ", inicio, inicio);
+        
+        if (matrixOfValues[i][1] >= 0)
+            printf(" %.2f\n", matrixOfValues[i][1]);
+        else
+            printf("%.2f\n", matrixOfValues[i][1]);
+*/

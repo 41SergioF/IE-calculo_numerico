@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include </home/carlossergio/Documentos/IE/calculoNumerico.h>
+#include </home/carlossergio/Documentos/BCC-2021/IE/calculoNumerico.h>
 
 int main(){
     const float error = 0.001;
@@ -12,6 +12,9 @@ int main(){
     const float start_0 = 1.5;
     const float start_1 = 1.7;
 
+    printf("Valores de x e f(x)\n");
+    createsListOfValues(-4.0, 1.0);
+
     printf("Método Bissecção\n");
     //printf("\tResultado: %.4lf\n\n", bisectionMethod(a, b, error));
     
@@ -19,7 +22,7 @@ int main(){
     //printf("\tResultado: %.4lf\n\n", falsePositionMethod(a, b, error));
     
     printf("Método Ponto Fixo\n");
-    printf("\tResultado: %.4lf\n\n", fixedPointMethod(start_0, error));
+    //printf("\tResultado: %.4lf\n\n", fixedPointMethod(start_0, error));
     
     printf("Método Newton Raphson\n");
     //printf("\tResultado: %.4lf\n\n", newtonRaphsonMethod(start_0, error));
